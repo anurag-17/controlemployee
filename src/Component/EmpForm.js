@@ -38,7 +38,7 @@ export const EmpForm = () => {
         e.preventDefault();
         console.log(employeedata);
 
-        await axios.post("http://localhost:4000/employeeform", employeedata, { headers: { "Content-Type": "application/json" } }).then((res) => {
+        await axios.post("/employeeform", employeedata, { headers: { "Content-Type": "application/json" } }).then((res) => {
             console.log(res);
             setEmployeedata({
                 ename: "",
@@ -55,7 +55,7 @@ export const EmpForm = () => {
     }
     const otheroption = async (e) => {
         e.preventDefault()
-        await axios.post("http://localhost:4000/otherprofile", otherprofile, { headers: { "Content-Type": "application/json" } }).then((res) => {
+        await axios.post("/otherprofile", otherprofile, { headers: { "Content-Type": "application/json" } }).then((res) => {
             console.log(res);
             
             setOtherprofile({
