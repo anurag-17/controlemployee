@@ -16,7 +16,7 @@ export const AdminLogin = () => {
     const Form_Handler = async (e) => {
         e.preventDefault();
 
-        await axios.post("http://localhost:4000/adminlogin", adminData, { headers: { "Content-Type": "application/json" } }).then((res) => {
+        await axios.post("/adminlogin", adminData, { headers: { "Content-Type": "application/json" } }).then((res) => {
 
 
             console.log(res.data.token);

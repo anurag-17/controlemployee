@@ -9,7 +9,7 @@ export const AdminDashboard = () => {
     const [query, setQuery] = useState("")
     const [empdata, setEmpdata] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:4000/adminplace", { params: tokenid }).then((res) => {
+        axios.get("/adminplace", { params: tokenid }).then((res) => {
             console.log(res);
 
             if (res.data.message == "error") {
@@ -20,7 +20,7 @@ export const AdminDashboard = () => {
             console.log(error);
         })
         const fetch = async () => {
-            await axios.post("http://localhost:4000/fetchdata").then((res) => {
+            await axios.post("/fetchdata").then((res) => {
 
                 setEmpdata(res.data.result)
                 

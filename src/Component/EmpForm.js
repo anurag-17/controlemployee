@@ -16,7 +16,7 @@ export const EmpForm = () => {
     })
     useEffect(() => {
         const fetch = async () => {
-            await axios.post("http://localhost:4000/fetchother").then((res) => {
+            await axios.post("/fetchother").then((res) => {
 
                 setFetched(res.data.result)
 

@@ -7,8 +7,9 @@ mongoose.connect(db,{
 }).then(()=>{
     console.log("connected to database");
 }).catch((error)=>{
-    console.log(`admin ${error}`);
-})
+    console.log(`admin ${error}`);   
+}) 
+
 
 const otherSchema =  mongoose.Schema({
     "profile" : {
