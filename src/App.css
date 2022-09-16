@@ -1,0 +1,21 @@
+.buttondox{
+    margin-right: 15px;
+}
+.contentform{
+    margin-top: 35px;
+}
+.otherinput{
+    margin-top: 5px;
+    justify-content: right;
+    text-align: right;
+    
+}
+.otherinput input{
+    margin-top: 5px;
+    justify-content: right;
+    text-align: center;
+    
+}
+.otherinput button{
+    margin-right: 5px;
+}
