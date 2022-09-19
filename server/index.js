@@ -6,7 +6,6 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 const jwt = require("jsonwebtoken")
 app.use(cors());
-app.set("view engine", "ejs");
 let urlencoded = bodyparser.json();
 const Admin = require("./model/AdminModel")
 const Employee = require("./model/EmployeeModel")
@@ -14,18 +13,17 @@ const Otherpro = require("./model/Otherprofile")
 
 
 
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static(path.join(__dirname, "./client/build")));
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "./client/build")));
   
-//     app.get("*", (req, res) =>
-//       res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-//     );
-//   } else {
-//     app.get("/", (req, res) => {
-//       res.send("API is running..");
-//     });
-//   }
-//   ("hi");
+    app.get("*", (req, res) =>
+      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+    );
+  } else {
+    app.get("/", (req, res) => {
+      res.send("API is running..");
+    });
+  }
 
 
 
