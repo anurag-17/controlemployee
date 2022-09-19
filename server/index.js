@@ -2,6 +2,8 @@ const express = require("express")
 const app = express()
 const bodyparser = require("body-parser")
 const cors = require("cors")
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 const jwt = require("jsonwebtoken")
 app.use(cors());
 app.set("view engine", "ejs");
