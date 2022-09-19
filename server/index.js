@@ -29,13 +29,13 @@ app.post("/adminlogin", urlencoded, (async (req, res) => {
             return res.status(421).send("Invalid Password");
 
         } 
-        const key = "abc";
+        const key = process.env.JWT_SECRET;
         const token = jwt.sign({
             user_id: email,
         },
             key,
             {
-                expiresIn: "2h",
+                expiresIn: process.env.JWT_TIMEOUT,
             }
         )
 
@@ -79,7 +79,7 @@ function verifytoken(req, res, next) {
     if (token != undefined) {
         let Rtoken = token.replaceAll('"', "");
 
-        jwt.verify(Rtoken, 'abc', (error, authdata) => {
+        jwt.verify(Rtoken, process.env.JWT_SECRET, (error, authdata) => {
             if (error) {
                 res.status(403)
             }
@@ -120,6 +120,6 @@ app.post("/fetchother", (req, res)=>{
     })
 })
 
-app.listen(4000, () => {
+app.listen(process.env.PORT, () => {
     console.log("Server is running on 4000 port");
 })
